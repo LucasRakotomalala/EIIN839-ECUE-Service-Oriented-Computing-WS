@@ -1,14 +1,14 @@
-# Description de « l’architecture » d’un serveur Web 
+# 1. Description de « l’architecture » d’un serveur Web 
 
 ## Question 1
-Nous devons utilisé le port 8080 ici car il s'agit d'un rappel pour le port standard d'un serveur Web. Le port 80 étant déjà utilisé.
+Nous devons utilisé le port `8080` ici car il s'agit d'un rappel pour le port standard d'un serveur Web. Le port `80` étant déjà utilisé.
 
-# Tests avant de commencer
+# 2. Tests avant de commencer
 
 ## Question 2
 * J'exécute la commande `telnet www.tigli.fr 80` dans mon terminal.
-* J'écris alors `GET /` dans la nouvelle fenêtre (bien que rien ne s'affiche lors de l'écriture)
-* Lorsque la requête est correctement écrite, j'ai la réponse suivante :
+* J'écris alors `GET /` dans la nouvelle fenêtre (bien que rien ne s'affiche lors de l'écriture).
+* Lorsque la requête est correctement écrite, on obtient la réponse suivante :
 ```bash
 
 <html><body><h1>Welcome to Nyx</h1></body></html>
@@ -17,7 +17,7 @@ Nous devons utilisé le port 8080 ici car il s'agit d'un rappel pour le port sta
 Perte de la connexion à l’hôte.
 
 ```
-* Lorsq'une requête n'est pas implémentée (comme `get /`), on obtient la réponse suivante :
+* Lorsqu'une requête n'est pas implémentée (comme `get /`), on obtient la réponse suivante :
 ```bash
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
                                                   <html><head>
@@ -36,7 +36,7 @@ Perte de la connexion à l’hôte.
 ```
 
 ## Question 3
-Comme le montre le screen ci-dessous, environ 40 requêtes sont nécessaires pour récupérer l'intégralité de la page.
+Comme le montre le screen ci-dessous, environ **40 requêtes** sont nécessaires pour récupérer l'intégralité de la page.
 <img alt="TD1-Q3" src="resources/TD1-Q3.png"/>
 
 ## Question 4
