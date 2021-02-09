@@ -19,7 +19,7 @@ namespace Echo
                 System.Environment.Exit(0);
             };
 
-            TcpListener ServerSocket = new TcpListener(5000);
+            TcpListener ServerSocket = new TcpListener(8080);
             ServerSocket.Start();
 
             Console.WriteLine("Server started.");

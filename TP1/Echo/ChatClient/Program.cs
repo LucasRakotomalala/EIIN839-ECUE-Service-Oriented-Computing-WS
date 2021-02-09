@@ -38,7 +38,7 @@ namespace Echo
 
         static void Main(string[] args)
         {
-            clientSocket = new TcpClient("localhost", 5000);
+            clientSocket = new TcpClient("localhost", 8080);
             Thread ctThreadWrite = new Thread(Write);
             Thread ctThreadRead = new Thread(Read);
             ctThreadRead.Start();
