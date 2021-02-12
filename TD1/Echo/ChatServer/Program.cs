@@ -88,7 +88,7 @@ namespace Echo
                 }
                 else
                 {
-                    response = "403 Bad Request";
+                    response = "501 Method Not Implemented";
                     Console.WriteLine("Response :\n" + response);
                     writer.Write(response);
                 }

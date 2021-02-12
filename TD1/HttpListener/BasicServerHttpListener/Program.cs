@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
 
-namespace BasicServerHTTPlistener
+namespace BasicServerHTTPListener
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            
-
             if (!HttpListener.IsSupported)
             {
                 Console.WriteLine("A more recent Windows version is required to use the HttpListener class.");
@@ -46,6 +43,7 @@ namespace BasicServerHTTPlistener
                 Console.WriteLine("Syntax error: the call must contain at least one web server url as argument");
             }
             listener.Start();
+
             foreach (string s in args)
             {
                 Console.WriteLine("Listening for connections on " + s);
@@ -56,6 +54,9 @@ namespace BasicServerHTTPlistener
                 // Note: The GetContext method blocks while waiting for a request.
                 HttpListenerContext context = listener.GetContext();
                 HttpListenerRequest request = context.Request;
+
+                Header header = new Header((WebHeaderCollection) request.Headers);
+                Console.WriteLine(header);
 
                 string documentContents;
                 using (Stream receiveStream = request.InputStream)
@@ -72,7 +73,7 @@ namespace BasicServerHTTPlistener
                 HttpListenerResponse response = context.Response;
 
                 // Construct a response.
-                string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
+                string responseString = "<html><body>Hello World!</body></html>";
                 byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
                 // Get a response stream and write the response to it.
                 response.ContentLength64 = buffer.Length;
