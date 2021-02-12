@@ -36,7 +36,7 @@ namespace Echo
 
     public class handleClient
     {
-        static readonly string HTTP_ROOT = @"E:\SI4\Semestre 8\Service Oriented Computing\TP1\www\pub";
+        static readonly string HTTP_ROOT = @"E:\SI4\Semestre 8\Service Oriented Computing\eiin839\TD1\www\pub";
         TcpClient clientSocket;
         public void startClient(TcpClient inClientSocket)
         {
@@ -56,21 +56,39 @@ namespace Echo
             while (true)
             {
                 string str = reader.ReadString();
-                // Console.WriteLine(str);
-                // writer.Write(str);
+                Console.WriteLine(str);
+                string response = "";
                 if (str.StartsWith("GET"))
                 {
-                    Console.WriteLine("Request : " + str);
-                    string[] tab = str.Split(" ");
-                    string requestPath = tab.FirstOrDefault(input => input.StartsWith('/'));
-                    requestPath = string.IsNullOrEmpty(requestPath) ? HTTP_ROOT + requestPath.Replace("/", "\\") : HTTP_ROOT + "\\index.html";
-                    string response = "";
-                    // Open the file to read from.
-                    using (StreamReader sr = File.OpenText(requestPath))
+                    string[] input = str.Split(" ");
+                    string requestPath = input.FirstOrDefault(input => input.StartsWith('/'));
+                    if (requestPath == null)
                     {
-                        response = "HTTP/1.0 200 OK\n\n";
-                        response = response + sr.ReadToEnd();
+                        response = "403 Bad Request";
+                        Console.WriteLine("Response :\n" + response);
+                        writer.Write(response);
                     }
+                    else
+                    {
+                        requestPath = requestPath.Equals("/") ? HTTP_ROOT + "\\index.html" : HTTP_ROOT + requestPath.Replace("/", "\\");
+                        try
+                        {
+                            response = "HTTP/1.0 200 OK\n\n";
+                            response = response + File.ReadAllText(requestPath);
+                            Console.WriteLine("Response :\n" + response);
+                            writer.Write(response);
+                        }
+                        catch (FileNotFoundException)
+                        {
+                            response = "404 Not Found";
+                            Console.WriteLine("Response :\n" + response);
+                            writer.Write(response);
+                        }
+                    }
+                }
+                else
+                {
+                    response = "403 Bad Request";
                     Console.WriteLine("Response :\n" + response);
                     writer.Write(response);
                 }

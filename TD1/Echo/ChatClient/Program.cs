@@ -18,7 +18,6 @@ namespace Echo
 
             while (true)
             {
-
                 string str = Console.ReadLine();
                 writer.Write(str);
             }
@@ -29,7 +28,7 @@ namespace Echo
 
             while (true)
             {
-                string str = "";
+                string str = "Response: ";
                 str = str + reader.ReadString();
                 Console.WriteLine(str);
             }
