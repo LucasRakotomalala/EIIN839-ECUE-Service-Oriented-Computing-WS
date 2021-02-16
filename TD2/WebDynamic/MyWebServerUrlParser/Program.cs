@@ -112,40 +112,16 @@ namespace MyWebServerUrlParser
                 // Évite de faire buguer le programme lorsque la requête pour la `favicon` est lancée automatiquement par le navigateur
                 if (method != null)
                 {
-                    Console.WriteLine("Success: Internal Method Detected");
                     MyMethods myMethods = new MyMethods();
                     result = (string) method.Invoke(myMethods, params_request);
                     Console.WriteLine(result);
                 }
                 else
                 {
-                    Console.WriteLine("Error: No Internal Method Detected");
-                }
-
-                if (last_segment.Equals("MyExternalMethod"))
-                {
-                    Console.WriteLine("Success: External Method Detected");
-                    ProcessStartInfo start = new ProcessStartInfo();
-                    start.FileName = @"E:\SI4\Semestre 8\Service Oriented Computing\eiin839\TD2\WebDynamic\MyExternalMethods\bin\Debug\netcoreapp3.1\MyExternalMethods.exe"; // Specify exe name.
-                    start.Arguments = params_request[0] + " " + params_request[1];
-                    start.UseShellExecute = false;
-                    start.RedirectStandardOutput = true;
-                    using (Process process = Process.Start(start))
-                    {
-                        using (StreamReader reader = process.StandardOutput)
-                        {
-                            result = reader.ReadToEnd();
-                            Console.WriteLine(result);
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Error: No External Methods Detected");
+                    Console.WriteLine("Error: no method found");
                 }
 
                 //get params un url. After ? and between &
-
                 Console.WriteLine(request.Url.Query);
 
                 //parse params in url
