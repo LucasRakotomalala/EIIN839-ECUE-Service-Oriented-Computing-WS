@@ -127,17 +127,11 @@ namespace MyWebServerUrlParser
                     Console.WriteLine("Success: External Method Detected");
                     ProcessStartInfo start = new ProcessStartInfo();
                     start.FileName = @"E:\SI4\Semestre 8\Service Oriented Computing\eiin839\TD2\WebDynamic\MyExternalMethods\bin\Debug\netcoreapp3.1\MyExternalMethods.exe"; // Specify exe name.
-                    start.Arguments = params_request[0] + " " + params_request[1]; // Specify arguments.
+                    start.Arguments = params_request[0] + " " + params_request[1];
                     start.UseShellExecute = false;
                     start.RedirectStandardOutput = true;
-                    //
-                    // Start the process.
-                    //
                     using (Process process = Process.Start(start))
                     {
-                        //
-                        // Read in all the text from the process with the StreamReader.
-                        //
                         using (StreamReader reader = process.StandardOutput)
                         {
                             result = reader.ReadToEnd();

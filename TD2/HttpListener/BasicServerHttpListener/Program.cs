@@ -22,7 +22,7 @@ namespace BasicServerHTTPListener
             Console.CancelKeyPress += delegate
             {
                 listener.Stop();
-                System.Environment.Exit(0);
+                Environment.Exit(0);
             };
 
             // Add the prefixes.
@@ -74,10 +74,10 @@ namespace BasicServerHTTPListener
 
                 // Construct a response.
                 string responseString = "<html><body>Hello World!</body></html>";
-                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+                byte[] buffer = Encoding.UTF8.GetBytes(responseString);
                 // Get a response stream and write the response to it.
                 response.ContentLength64 = buffer.Length;
-                System.IO.Stream output = response.OutputStream;
+                Stream output = response.OutputStream;
                 output.Write(buffer, 0, buffer.Length);
                 // You must close the output stream.
                 output.Close();

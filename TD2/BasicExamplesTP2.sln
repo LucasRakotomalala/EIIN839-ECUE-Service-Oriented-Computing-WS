@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalExeCall", "External
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicWebServerUrlParser", "BasicWebServer\BasicWebServerUrlParser.csproj", "{B6A28AAE-DA86-41D3-8A15-9B529A3AD71C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebServerUrlParser", "WebDynamic\MyWebServerUrlParser\MyWebServerUrlParser.csproj", "{8EAE2CBB-C036-473B-A4CF-16ACC7D8160E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebServerUrlParser", "WebDynamic\MyWebServerUrlParser\MyWebServerUrlParser.csproj", "{8EAE2CBB-C036-473B-A4CF-16ACC7D8160E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyExternalMethods", "WebDynamic\MyExternalMethods\MyExternalMethods.csproj", "{6AE6F913-5BCF-4D33-8D6C-B2D706E598AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyExternalMethods", "WebDynamic\MyExternalMethods\MyExternalMethods.csproj", "{6AE6F913-5BCF-4D33-8D6C-B2D706E598AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
