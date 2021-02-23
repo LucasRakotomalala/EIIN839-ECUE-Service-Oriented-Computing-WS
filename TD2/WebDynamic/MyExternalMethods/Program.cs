@@ -6,12 +6,10 @@ namespace MyExternalMethods
     {
         static void Main(string[] args)
         {
-            if (args.Length > 1)
-            {
+            if (args.Length == 2)
                 Console.WriteLine("<html><body>Hello " + args[0] + " et " + args[1] + "!</body></html>");
-            }
             else
-                Console.WriteLine("<html><body>At least 2 params required</body></html>");
+                Console.WriteLine("<html><body>Exactly 2 params required!</body></html>");
         }
     }
 }

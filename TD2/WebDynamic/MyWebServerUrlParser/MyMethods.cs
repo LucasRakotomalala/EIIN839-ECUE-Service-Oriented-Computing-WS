@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 
 namespace MyWebServerUrlParser
@@ -8,7 +7,10 @@ namespace MyWebServerUrlParser
     {
         public string MyMethod(string param1_value, string param2_value)
         {
-            return "<html><body> Hello " + param1_value + " et " + param2_value + "!</body></html>";
+            if (param1_value != null && param2_value != null)
+                return "<html><body> Hello " + param1_value + " et " + param2_value + "!</body></html>";
+            else
+                return "<html><body>Exactly 2 params required!</body></html>";
         }
 
         public string MyExternalMethod(string param1_value, string param2_value)
@@ -25,6 +27,13 @@ namespace MyWebServerUrlParser
                     return reader.ReadToEnd();
                 }
             }
+        }
+
+        public string incr(string value)
+        {
+            // TODO: Surrond parse with try/catch block
+            int val = int.Parse(value) + 1;
+            return $"{{\n\t\"val\": {val},\n\t\"method\": \"incr\",\n\t\"OK\": \"true\"\n}}";
         }
     }
 }

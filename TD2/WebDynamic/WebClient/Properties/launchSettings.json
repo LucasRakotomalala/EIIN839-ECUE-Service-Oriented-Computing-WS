@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WebClient": {
+      "commandName": "Project",
+      "commandLineArgs": "http://localhost:8081/"
+    }
+  }
+}

@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Web;
+using System.Collections.Generic;
+
 
 namespace MyWebServerUrlParser
 {
@@ -97,9 +98,15 @@ namespace MyWebServerUrlParser
                 string last_segment = segments[segments.Length - 1];
 
                 // On construit les paramètres
-                Object[] params_request = new Object[2];
-                params_request[0] = HttpUtility.ParseQueryString(request.Url.Query).Get("param1");
-                params_request[1] = HttpUtility.ParseQueryString(request.Url.Query).Get("param2");
+                List<object> params_request = new List<object>();
+                if (HttpUtility.ParseQueryString(request.Url.Query).Get("param1") != null)
+                    params_request.Add(HttpUtility.ParseQueryString(request.Url.Query).Get("param1"));
+                if (HttpUtility.ParseQueryString(request.Url.Query).Get("param2") != null)
+                    params_request.Add(HttpUtility.ParseQueryString(request.Url.Query).Get("param2"));
+                if (HttpUtility.ParseQueryString(request.Url.Query).Get("val") != null)
+                    params_request.Add(HttpUtility.ParseQueryString(request.Url.Query).Get("val"));
+
+                object[] params_tab = params_request.ToArray();
 
                 // On récupère la classe et la méthode
                 Type type = typeof(MyMethods);
@@ -113,7 +120,7 @@ namespace MyWebServerUrlParser
                 if (method != null)
                 {
                     MyMethods myMethods = new MyMethods();
-                    result = (string) method.Invoke(myMethods, params_request);
+                    result = (string) method.Invoke(myMethods, params_tab);
                     Console.WriteLine(result);
                 }
                 else

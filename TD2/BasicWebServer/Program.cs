@@ -92,7 +92,6 @@ namespace BasicServerHTTPlistener
                 }
 
                 //get params un url. After ? and between &
-
                 Console.WriteLine(request.Url.Query);
 
                 //parse params in url
