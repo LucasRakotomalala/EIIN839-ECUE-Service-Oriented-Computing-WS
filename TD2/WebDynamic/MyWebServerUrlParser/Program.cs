@@ -6,7 +6,6 @@ using System.Text;
 using System.Web;
 using System.Collections.Generic;
 
-
 namespace MyWebServerUrlParser
 {
     internal class Program
@@ -20,7 +19,6 @@ namespace MyWebServerUrlParser
                 Console.WriteLine("A more recent Windows version is required to use the HttpListener class.");
                 return;
             }
-
 
             // Create a listener.
             HttpListener listener = new HttpListener();
@@ -57,7 +55,6 @@ namespace MyWebServerUrlParser
                 listener.Close();
                 Environment.Exit(0);
             };
-
 
             while (true)
             {
@@ -97,7 +94,7 @@ namespace MyWebServerUrlParser
                 string[] segments = request.Url.Segments;
                 string last_segment = segments[segments.Length - 1];
 
-                // On construit les paramètres
+                // On récupère des paramètres s'ils existent
                 List<object> params_request = new List<object>();
                 if (HttpUtility.ParseQueryString(request.Url.Query).Get("param1") != null)
                     params_request.Add(HttpUtility.ParseQueryString(request.Url.Query).Get("param1"));
@@ -115,7 +112,7 @@ namespace MyWebServerUrlParser
                 // Initialisation du résultat à afficher
                 string result = "";
 
-                // Si la méthode existe on l'appelle
+                // Si la méthode existe on l'appelle avec les arguments nécessaires
                 // Évite de faire buguer le programme lorsque la requête pour la `favicon` est lancée automatiquement par le navigateur
                 if (method != null)
                 {
