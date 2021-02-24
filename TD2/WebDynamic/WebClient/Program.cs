@@ -17,9 +17,9 @@ namespace WebClient
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Write a number to increment :\n");
             while (true)
             {
+                Console.Write("Write a number to increment : ");
                 string input = Console.ReadLine();
                 Incr(args[0], input).GetAwaiter().GetResult();
             }

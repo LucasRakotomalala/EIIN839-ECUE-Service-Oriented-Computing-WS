@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "MyWebServerUrlParser": {
+    "MyWebServer": {
       "commandName": "Project",
       "commandLineArgs": "http://localhost:8080/ http://localhost:8081/"
     }

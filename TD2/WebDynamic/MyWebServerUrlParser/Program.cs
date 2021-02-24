@@ -6,7 +6,7 @@ using System.Text;
 using System.Web;
 using System.Collections.Generic;
 
-namespace MyWebServerUrlParser
+namespace MyWebServer
 {
     internal class Program
     {

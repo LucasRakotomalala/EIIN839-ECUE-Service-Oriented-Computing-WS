@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Net.Sockets;
 using System.IO;
@@ -44,8 +41,6 @@ namespace Echo
             ctThread.Start();
         }
 
-
-
         private void Echo()
         {
             NetworkStream stream = clientSocket.GetStream();
@@ -60,9 +55,6 @@ namespace Echo
                 writer.Write(str);
             }
         }
-
-
-
     }
 
 }

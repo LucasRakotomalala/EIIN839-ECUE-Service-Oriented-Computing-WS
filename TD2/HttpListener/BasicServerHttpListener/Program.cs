@@ -55,6 +55,7 @@ namespace BasicServerHTTPListener
                 HttpListenerContext context = listener.GetContext();
                 HttpListenerRequest request = context.Request;
 
+                // Read Headers from request
                 Header header = new Header((WebHeaderCollection) request.Headers);
                 Console.WriteLine(header);
 
