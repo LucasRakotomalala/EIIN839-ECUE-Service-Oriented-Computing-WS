@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Net.Sockets;
 using System.IO;
+using System.Linq;
 
 namespace Echo
 {
@@ -13,10 +14,10 @@ namespace Echo
 
             Console.CancelKeyPress += delegate
             {
-                System.Environment.Exit(0);
+                Environment.Exit(0);
             };
 
-            TcpListener ServerSocket = new TcpListener(5000);
+            TcpListener ServerSocket = new TcpListener(8080);
             ServerSocket.Start();
 
             Console.WriteLine("Server started.");
@@ -33,6 +34,7 @@ namespace Echo
 
     public class handleClient
     {
+        static readonly string HTTP_ROOT = @"E:\SI4\Semestre 8\Service Oriented Computing\eiin839\TD1\www\pub";
         TcpClient clientSocket;
         public void startClient(TcpClient inClientSocket)
         {
@@ -52,7 +54,41 @@ namespace Echo
 
                 string str = reader.ReadString();
                 Console.WriteLine(str);
-                writer.Write(str);
+                string response = "";
+                if (str.StartsWith("GET"))
+                {
+                    string[] input = str.Split(" ");
+                    string requestPath = input.FirstOrDefault(input => input.StartsWith('/'));
+                    if (requestPath == null)
+                    {
+                        response = "403 Bad Request";
+                        Console.WriteLine("Response :\n" + response);
+                        writer.Write(response);
+                    }
+                    else
+                    {
+                        requestPath = requestPath.Equals("/") ? HTTP_ROOT + "\\index.html" : HTTP_ROOT + requestPath.Replace("/", "\\");
+                        try
+                        {
+                            response = "HTTP/1.0 200 OK\n\n";
+                            response = response + File.ReadAllText(requestPath);
+                            Console.WriteLine("Response :\n" + response);
+                            writer.Write(response);
+                        }
+                        catch (FileNotFoundException)
+                        {
+                            response = "404 Not Found";
+                            Console.WriteLine("Response :\n" + response);
+                            writer.Write(response);
+                        }
+                    }
+                }
+                else
+                {
+                    response = "501 Method Not Implemented";
+                    Console.WriteLine("Response :\n" + response);
+                    writer.Write(response);
+                }
             }
         }
     }
