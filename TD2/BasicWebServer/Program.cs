@@ -1,4 +1,8 @@
 ﻿using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
 using System.IO;
 using System.Net;
 using System.Text;
@@ -11,7 +15,11 @@ namespace BasicServerHTTPlistener
         private static void Main(string[] args)
         {
 
+<<<<<<< HEAD
             // If HttpListener is not supported by the Framework
+=======
+            //if HttpListener is not supported by the Framework
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
             if (!HttpListener.IsSupported)
             {
                 Console.WriteLine("A more recent Windows version is required to use the HttpListener class.");
@@ -41,7 +49,11 @@ namespace BasicServerHTTPlistener
             }
             listener.Start();
 
+<<<<<<< HEAD
             // Get args 
+=======
+            // get args 
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
             foreach (string s in args)
             {
                 Console.WriteLine("Listening for connections on " + s);
@@ -92,6 +104,10 @@ namespace BasicServerHTTPlistener
                 }
 
                 //get params un url. After ? and between &
+<<<<<<< HEAD
+=======
+
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
                 Console.WriteLine(request.Url.Query);
 
                 //parse params in url
@@ -100,17 +116,29 @@ namespace BasicServerHTTPlistener
                 Console.WriteLine("param3 = " + HttpUtility.ParseQueryString(request.Url.Query).Get("param3"));
                 Console.WriteLine("param4 = " + HttpUtility.ParseQueryString(request.Url.Query).Get("param4"));
 
+<<<<<<< HEAD
+=======
+                //
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
                 Console.WriteLine(documentContents);
 
                 // Obtain a response object.
                 HttpListenerResponse response = context.Response;
 
                 // Construct a response.
+<<<<<<< HEAD
                 string responseString = "<html><body>Hello World!</body></html>";
                 byte[] buffer = Encoding.UTF8.GetBytes(responseString);
                 // Get a response stream and write the response to it.
                 response.ContentLength64 = buffer.Length;
                 Stream output = response.OutputStream;
+=======
+                string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
+                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+                // Get a response stream and write the response to it.
+                response.ContentLength64 = buffer.Length;
+                System.IO.Stream output = response.OutputStream;
+>>>>>>> 866450e4f1e92aa3bf759621aa89753f360d4000
                 output.Write(buffer, 0, buffer.Length);
                 // You must close the output stream.
                 output.Close();
