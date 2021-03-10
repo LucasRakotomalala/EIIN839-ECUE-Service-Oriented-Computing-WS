@@ -2,7 +2,7 @@
 {
     public class DetailedStation
     {
-        public string contract_name { get; set; }
+        public string contractName { get; set; }
 
         public string name { get; set; }
 
@@ -16,31 +16,37 @@
 
         public bool bonus { get; set; }
 
-        public int bike_stands { get; set; }
-
-        public int available_bike_stands { get; set; }
-
-        public int available_bikes { get; set; }
-
         public string status { get; set; }
 
-        public long last_update { get; set; }
+        public bool connected { get; set; }
+
+        public bool overflow { get; set; }
+
+        public string shape { get; set; }
+
+        public string overflowStands { get; set; }
+
+        public Stand totalStands { get; set; }
+
+        public Stand mainStands { get; set; }
 
         public override string ToString()
         {
             return
-                "Contract Name: " + contract_name + "\n" +
+                "Contract Name: " + contractName + "\n" +
                 "Address: " + address + "\n" +
                 "Name: " + name + "\n" +
                 "Number: " + number + "\n" +
                 position.ToString() +
                 "Banking: " + banking + "\n" +
                 "Bonus: " + bonus + "\n" +
-                "Bike Stands: " + bike_stands + "\n" +
-                "Available Bike Stands: " + available_bike_stands + "\n" +
-                "Available Bikes: " + available_bikes + "\n" +
                 "Status: " + status + "\n" +
-                "Last Update: " + last_update + "\n";
+                "Connected: " + connected + "\n" +
+                "Overflow: " + overflow + "\n" +
+                "Shape: " + shape + "\n" +
+                "Overflow Stands: " + overflowStands + "\n" +
+                "Total Stands: " + totalStands + "\n" +
+                "Main Stands: " + mainStands + "\n";
         }
     }
 }

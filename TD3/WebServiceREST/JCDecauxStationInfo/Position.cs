@@ -2,15 +2,15 @@
 {
     public class Position
     {
-        public double lat { get; set; }
+        public double latitude { get; set; }
 
-        public double lng { get; set; }
+        public double longitude { get; set; }
 
         public override string ToString()
         {
             return
-                "Latitude: " + lat + "\n" +
-                "Longitude: " + lng + "\n";
+                "Latitude: " + latitude + "\n" +
+                "Longitude: " + longitude + "\n";
         }
     }
 }

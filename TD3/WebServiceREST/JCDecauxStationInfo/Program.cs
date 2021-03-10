@@ -9,7 +9,7 @@ namespace JCDecauxStationInfo
     {
         static readonly HttpClient client = new HttpClient();
 
-        static readonly string URL = "https://api.jcdecaux.com/vls/v1/";
+        static readonly string URL = "https://api.jcdecaux.com/vls/v3/";
         static readonly string DATA = "stations";
         static readonly string API_KEY = "ff987c28b1313700e2c97651cec164bd6cb4ed76";
 

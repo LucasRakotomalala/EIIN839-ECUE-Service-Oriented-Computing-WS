@@ -10,8 +10,6 @@ namespace JCDecauxContractsList
 
         public string country_code { get; set; }
 
-        public string address { get; set; }
-
         public List<string> cities { get; set; }
 
         public override string ToString()
@@ -20,9 +18,7 @@ namespace JCDecauxContractsList
                 "Name: " + name + "\n" +
                 "Commercial Name: " + commercial_name + "\n" +
                 "Country Code: " + country_code + "\n" +
-                "Cities: " + (cities != null ? string.Join(", ", cities) : "N/A") + "\n" +
-                "Address: " + (address != null ? address : "N/A") + "\n";
-            ;
+                "Cities: " + (cities != null ? string.Join(", ", cities) : "N/A") + "\n";            ;
         }
     }
 }
