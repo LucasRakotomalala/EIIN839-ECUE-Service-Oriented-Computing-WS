@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCDecauxStationsList", "JCD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCDecauxStationInfo", "JCDecauxStationInfo\JCDecauxStationInfo.csproj", "{C0DB2488-0A93-42BF-8CEB-5DCC27B6E59A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCDecauxGPS", "JCDecauxGPS\JCDecauxGPS.csproj", "{1EEF287A-3C6B-4023-AD2C-A4C08C17744C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -27,6 +29,10 @@ Global
 		{C0DB2488-0A93-42BF-8CEB-5DCC27B6E59A}.Debug|anycpu.Build.0 = Debug|anycpu
 		{C0DB2488-0A93-42BF-8CEB-5DCC27B6E59A}.Release|anycpu.ActiveCfg = Release|anycpu
 		{C0DB2488-0A93-42BF-8CEB-5DCC27B6E59A}.Release|anycpu.Build.0 = Release|anycpu
+		{1EEF287A-3C6B-4023-AD2C-A4C08C17744C}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{1EEF287A-3C6B-4023-AD2C-A4C08C17744C}.Debug|anycpu.Build.0 = Debug|anycpu
+		{1EEF287A-3C6B-4023-AD2C-A4C08C17744C}.Release|anycpu.ActiveCfg = Release|anycpu
+		{1EEF287A-3C6B-4023-AD2C-A4C08C17744C}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
