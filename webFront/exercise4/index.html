@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="main.js" defer></script>
+    <title>My first Web Services UI client</title>
+</head>
+<body>
+    <div>
+        <label for="apiKey">API key:</label>
+        <input name="apiKeyInput" id="apiKey" value="ff987c28b1313700e2c97651cec164bd6cb4ed76">
+    </div>
+
+    <div>
+        <h2>Step 1: Retrieve all JCDecaux contracts</h2>
+        <button id="retrieveContractsButton" onclick="retrieveAllContracts();">Retrieve contracts</button>
+    </div>
+
+    <div>
+        <h2>Step 2: Retrieve contract stations</h2>
+        <label for="contracts-choice">Contract:</label>
+        <input list="contracts" name="contracts-choice" id="contracts-choice">
+        <datalist id="contracts"></datalist>
+        <button onclick="retrieveContractStations();">Retrieve contract stations</button>
+    </div>
+
+
+    <div>
+        <h2>Step 3: Find closest station</h2>
+        <label for="latitude">Latitude:</label>
+        <input id="latitude" name="latitude">
+        <label for="longitude">Longitude:</label>
+        <input id="longitude" name="longitude">
+
+        <button id="retrieveClosestButton" onclick="retrieveClosestStation();">Retrieve closest station</button>
+    </div>
+</body>
+</html>
