@@ -16,22 +16,22 @@ namespace Client.MathsOperations {
     public interface IMathsOperations {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Add", ReplyAction="http://tempuri.org/IMathsOperations/AddResponse")]
-        int Add(int x, int y);
+        double Add(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Add", ReplyAction="http://tempuri.org/IMathsOperations/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(int x, int y);
+        System.Threading.Tasks.Task<double> AddAsync(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Multiply", ReplyAction="http://tempuri.org/IMathsOperations/MultiplyResponse")]
-        int Multiply(int x, int y);
+        double Multiply(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Multiply", ReplyAction="http://tempuri.org/IMathsOperations/MultiplyResponse")]
-        System.Threading.Tasks.Task<int> MultiplyAsync(int x, int y);
+        System.Threading.Tasks.Task<double> MultiplyAsync(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Subtract", ReplyAction="http://tempuri.org/IMathsOperations/SubtractResponse")]
-        int Subtract(int x, int y);
+        double Subtract(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Subtract", ReplyAction="http://tempuri.org/IMathsOperations/SubtractResponse")]
-        System.Threading.Tasks.Task<int> SubtractAsync(int x, int y);
+        System.Threading.Tasks.Task<double> SubtractAsync(double x, double y);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMathsOperations/Divide", ReplyAction="http://tempuri.org/IMathsOperations/DivideResponse")]
         double Divide(double x, double y);
@@ -67,27 +67,27 @@ namespace Client.MathsOperations {
                 base(binding, remoteAddress) {
         }
         
-        public int Add(int x, int y) {
+        public double Add(double x, double y) {
             return base.Channel.Add(x, y);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int x, int y) {
+        public System.Threading.Tasks.Task<double> AddAsync(double x, double y) {
             return base.Channel.AddAsync(x, y);
         }
         
-        public int Multiply(int x, int y) {
+        public double Multiply(double x, double y) {
             return base.Channel.Multiply(x, y);
         }
         
-        public System.Threading.Tasks.Task<int> MultiplyAsync(int x, int y) {
+        public System.Threading.Tasks.Task<double> MultiplyAsync(double x, double y) {
             return base.Channel.MultiplyAsync(x, y);
         }
         
-        public int Subtract(int x, int y) {
+        public double Subtract(double x, double y) {
             return base.Channel.Subtract(x, y);
         }
         
-        public System.Threading.Tasks.Task<int> SubtractAsync(int x, int y) {
+        public System.Threading.Tasks.Task<double> SubtractAsync(double x, double y) {
             return base.Channel.SubtractAsync(x, y);
         }
         

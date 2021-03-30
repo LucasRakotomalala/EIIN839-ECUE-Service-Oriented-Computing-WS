@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/MathsLibrary/MathsOperations/?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8735/Design_Time_Addresses/MathsLibrary/MathsOperations/?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="355edd62-2c98-48b3-8ec8-c28b4606a759" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MathsLibrary/MathsOperations/?xsd=xsd0" />
-    <MetadataFile FileName="MathsOperations.wsdl" MetadataType="Wsdl" ID="c5cca2d4-074b-49b3-9247-7395d228fbd9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MathsLibrary/MathsOperations/?wsdl" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="3c021141-57f9-4175-bfce-6c8c9cd34771" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MathsLibrary/MathsOperations/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="7ca22282-5574-4033-8413-1d6cc5fa5155" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/MathsLibrary/MathsOperations/?xsd=xsd0" />
+    <MetadataFile FileName="MathsOperations1.wsdl" MetadataType="Wsdl" ID="24e166f1-5240-4d12-8814-6f664915aa4e" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/MathsLibrary/MathsOperations/?wsdl" />
+    <MetadataFile FileName="item21.xsd" MetadataType="Schema" ID="82ce0e34-21fa-4f03-99ab-3a3b54981497" SourceId="1" SourceUrl="http://localhost:8735/Design_Time_Addresses/MathsLibrary/MathsOperations/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

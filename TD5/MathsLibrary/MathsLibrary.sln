@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "MathsLibrary\Server.csproj", "{B4066219-744E-4134-9DAE-507B264B263B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSOAP", "Client\ClientSOAP.csproj", "{0F363364-825D-40C8-82CF-99C4577B9FD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{0F363364-825D-40C8-82CF-99C4577B9FD7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B4066219-744E-4134-9DAE-507B264B263B} = {B4066219-744E-4134-9DAE-507B264B263B}
 	EndProjectSection
